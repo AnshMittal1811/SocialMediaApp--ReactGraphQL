@@ -38,3 +38,5 @@ function User_name(user) {
     return user.getName()
 }
 ```
+
+After a GraphQL service is running (typically at a URL on a web service), it can receive GraphQL queries to validate and execute. The service 
