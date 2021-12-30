@@ -50,3 +50,14 @@ For example, this query:
   }
 }
 ```
+
+Could produce the following JSON result
+
+```
+{
+  "me" {
+     "name": "Luke Skywalker"  
+  }
+}
+```
+
