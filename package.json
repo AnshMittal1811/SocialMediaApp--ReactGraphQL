@@ -1,0 +1,12 @@
+{
+  "name": "socialmedia_events",
+  "version": "1.0.0",
+  "description": "This project is from a tutorial from youtube video talking about here (https://youtu.be/n1mdAPFq2Os).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
