@@ -1,43 +1,11 @@
 const { ApolloServer } = require('apollo-server');
-const gql = require('graphql-tag');
+// const gql = require('graphql-tag');
 const mongoose  = require('mongoose');
 
+const typeDefs = require('./graphql/typeDefs');
 const { MONGODB } = require('./config.js');
-const Post = require('./models/Post.js');
+const resolvers = require('./graphql/resolvers');
 
-// Tag Template strings
-// const typeDefs = gql`
-//     type Query{
-//         sayHi: String!
-//     }
-// `;
-const typeDefs = gql`
-    type Post{
-        id: ID!
-        body: String!
-        createdAt: String!
-        username: String!
-    }
-    type Query{
-        getPosts: [Post]
-    }
-`;
-
-//  For each query or mutation, each has its own resolvers
-// Group all the queries inside the query obj and all
-// mutations inside the mutations obj
-const resolvers = {
-    Query: {
-        async getPosts(){ 
-            try{
-                const posts = await Post.find();
-                return posts;
-            } catch (e) {
-                throw new Error(e);
-            }
-        }
-    }
-};
 
 const server = new ApolloServer({
     typeDefs,
