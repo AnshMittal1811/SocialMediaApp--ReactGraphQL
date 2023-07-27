@@ -1,6 +1,6 @@
 const postsResolvers = require('./posts');
 const usersResolvers = require('./users');
-
+const commentsResolvers = require('./comments');
 
 //  For each query or mutation, each has its own resolvers
 // Group all the queries inside the query obj and all
@@ -13,6 +13,7 @@ module.exports = {
     },
     Mutation: {
         ...usersResolvers.Mutation,
-        ...postsResolvers.Mutation
+        ...postsResolvers.Mutation,
+        ...commentsResolvers.Mutation
     }
 };
